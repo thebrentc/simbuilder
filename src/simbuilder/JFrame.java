@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package application;
+package simbuilder;
 
 /**
  *
- * @author brent
+ * @author thebrentc@gmail.com
  */
 public class JFrame extends javax.swing.JFrame {
 
@@ -30,6 +30,7 @@ public class JFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jDialogAbout = new javax.swing.JDialog();
+        jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButtonClose2 = new javax.swing.JButton();
@@ -46,6 +47,8 @@ public class JFrame extends javax.swing.JFrame {
         jMenuHelp = new javax.swing.JMenu();
         jMenuAbout = new javax.swing.JMenu();
 
+        jDialogAbout.setMinimumSize(new java.awt.Dimension(400, 300));
+
         jLabel3.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         jLabel3.setText("Application");
 
@@ -58,34 +61,49 @@ public class JFrame extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jDialogAboutLayout = new javax.swing.GroupLayout(jDialogAbout.getContentPane());
-        jDialogAbout.getContentPane().setLayout(jDialogAboutLayout);
-        jDialogAboutLayout.setHorizontalGroup(
-            jDialogAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogAboutLayout.createSequentialGroup()
-                .addGroup(jDialogAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialogAboutLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addGroup(jDialogAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(jDialogAboutLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jLabel4))))
-                    .addGroup(jDialogAboutLayout.createSequentialGroup()
-                        .addGap(185, 185, 185)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
                         .addComponent(jButtonClose2)))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jDialogAboutLayout.setVerticalGroup(
-            jDialogAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogAboutLayout.createSequentialGroup()
-                .addGap(111, 111, 111)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonClose2)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jDialogAboutLayout = new javax.swing.GroupLayout(jDialogAbout.getContentPane());
+        jDialogAbout.getContentPane().setLayout(jDialogAboutLayout);
+        jDialogAboutLayout.setHorizontalGroup(
+            jDialogAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogAboutLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
+        );
+        jDialogAboutLayout.setVerticalGroup(
+            jDialogAboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogAboutLayout.createSequentialGroup()
+                .addContainerGap(87, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -199,7 +217,7 @@ public class JFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelHelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
@@ -267,7 +285,8 @@ public class JFrame extends javax.swing.JFrame {
             public void run() {
                 JFrame jFrame = new JFrame();
                 jFrame.setVisible(true);
-                jFrame.setTitle("Application");  
+                jFrame.setTitle("Application");
+                jFrame.jPanelHelp.setVisible(false);
             }
         });
     }
@@ -288,6 +307,7 @@ public class JFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemNew;
     private javax.swing.JMenu jMenuTools;
     private javax.swing.JMenu jMenuView;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelHelp;
     // End of variables declaration//GEN-END:variables
 }
